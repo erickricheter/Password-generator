@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <img
+      src="./assets/password.png"
+      alt="Password Generator Logo"
+      class="logo"
+    />
+    <main class="container-input">
+      <span>
+        Size of your password
+        <span id="value"></span>
+      </span>
+      <input
+        type="range"
+        id="slider"
+        class="slider"
+        min="5"
+        max="25"
+        value="12"
+      />
+      <div id="especials-caracters">
+        <input
+          type="checkbox"
+          name="especialsCaracters"
+          id="especialsCaracters"
+          class="checkbox"
+        />
+        <label for="especialsCaracters"
+          >Include special characters in password?</label
+        >
+      </div>
+      <button id="button" class="button-cta" onclick="generatePassword()">
+        Generate password
+      </button>
+    </main>
+    <div
+      id="container-password"
+      class="container-password hide"
+      onclick="copyPassword()"
+    >
+      <span class="title">Your password has been generated.</span>
+      <span class="password" id="password"></span>
+      <span class="tooltip">Click on the password to copy.👆</span>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
